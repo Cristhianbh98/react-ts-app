@@ -2,11 +2,6 @@ import { useState } from "react";
 import type { MouseEventHandler } from "react";
 import LazyImage from "./components/RandomFox"
 
-type ImageItem = {
-  url: string
-  id: string
-}
-
 const getRandomNumber = (): number => {
   return Math.floor(Math.random() * 123) + 1;
 }
@@ -17,10 +12,10 @@ const generateUniqueId = (): string => {
 
 function App() {
   const link = 'https://randomfox.ca/images/'
-  const [images, setImages] = useState<ImageItem[]>([])
+  const [images, setImages] = useState<IFoxItem[]>([])
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
-    const newItem: ImageItem = {
+    const newItem: IFoxItem = {
       url: `${link}${getRandomNumber()}.jpg`,
       id: generateUniqueId()
     }
