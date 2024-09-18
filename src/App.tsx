@@ -1,9 +1,10 @@
-import { useState } from "react";
-import type { MouseEventHandler } from "react";
+import { useState } from "react"
+import { random } from "lodash"
+import type { MouseEventHandler } from "react"
 import LazyImage from "./components/RandomFox"
 
 const getRandomNumber = (): number => {
-  return Math.floor(Math.random() * 123) + 1;
+  return random(1, 123)
 }
 
 const generateUniqueId = (): string => {
@@ -21,6 +22,7 @@ function App() {
     }
 
     setImages([...images, newItem])
+    window.plausible('add_fox')
   }
 
   return (
