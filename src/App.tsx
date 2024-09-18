@@ -44,7 +44,7 @@ function App() {
                 src={item.url} 
                 width={300} 
                 height='auto'
-                onLazyLoad={() => console.log('Lazy load')}
+                onLazyLoad={(imgHTML) => console.log('Imagen', imgHTML)}
                 />
             </div>
           ))
